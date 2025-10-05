@@ -1,5 +1,9 @@
 # Medical-Claims-Denial-Rate-Analysis-
-SQL Project | Medical Claims Denial Rate Analysis A simple SQL-based healthcare analytics project where I analyze medical claims data to calculate the denial rate.   -Skills: SQL, CASE logic, Aggregate Functions, Healthcare Data Analysis  -Tools: PostgreSQL, Excel, GitHub  -Focus: Real-world healthcare metric — Denial Rate (% of denied claims)
+SQL Project | Medical Claims Denial Rate Analysis 
+A simple SQL-based healthcare analytics project where I analyze medical claims data to calculate the denial rate.   
+-Skills: SQL, CASE logic, Aggregate Functions, Healthcare Data Analysis  
+-Tools: PostgreSQL, Excel, GitHub  
+-Focus: Real-world healthcare metric — Denial Rate (% of denied claims)
 # 🏥 Medical Claims Denial Rate Analysis (SQL Project)
 
 ## 🎯 Project Objective
@@ -62,9 +66,10 @@ SELECT
         2
     ) AS denial_rate_percent
 FROM Claims;
-🧮 Output → 40.00%
 
-📈 Insights
+- Output → 40.00%
+
+- Insights
 Total Claims: 5
 
 Denied Claims: 2
@@ -74,39 +79,31 @@ Denial Rate: 40%
 Approved Claims: 60%
 
 A 40% denial rate indicates a high rejection trend.
-In real healthcare data, this metric helps identify:
-
-Coding or billing errors
+In real healthcare data, this metric helps identify:Coding or billing errors
 
 Documentation issues
 
 Insurance mismatch or missing information
 
-🧠 Key Learnings
-Used CASE WHEN statements for conditional logic
+- Key Learnings
+-Used CASE WHEN statements for conditional logic
+-Applied aggregate functions (SUM, COUNT) to calculate metrics
+-Practiced data validation and performance analysis relevant to healthcare analytics
 
-Applied aggregate functions (SUM, COUNT) to calculate metrics
-
-Practiced data validation and performance analysis relevant to healthcare analytics
-
-🛠️ Tools & Technologies
+- Tools & Technologies
 SQL (PostgreSQL) — data querying & analysis
-
 Excel/CSV — dataset creation
-
 GitHub — project version control and portfolio hosting
 
-🚀 How to Run the Project
-1️⃣ Open PostgreSQL (or pgAdmin).
-2️⃣ Run create_table.sql to create the table.
-3️⃣ Run insert_data.sql to load sample data.
-4️⃣ Run denial_rate_query.sql to get the denial rate percentage.
+- How to Run the Project
+1️] Open PostgreSQL (or pgAdmin).
+2️] Run create_table.sql to create the table.
+3️] Run insert_data.sql to load sample data.
+4️] Run denial_rate_query.sql to get the denial rate percentage.
 
-💡 Future Enhancements
+- Future Enhancements
 Add provider-wise or month-wise denial rate trends
-
 Include denial reason codes for deeper analysis
-
 Create a Power BI dashboard to visualize claim performance
 
 📚 About This Project
