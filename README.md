@@ -46,8 +46,7 @@ CREATE TABLE Claims (
 );
 
 2️⃣ Insert Data
-sql
-Copy code
+
 INSERT INTO Claims VALUES
 (1, 'P001', 'Aetna', 200, 'Approved', '2024-01-10'),
 (2, 'P002', 'Optum', 150, 'Denied', '2024-01-12'),
@@ -56,8 +55,7 @@ INSERT INTO Claims VALUES
 (5, 'P005', 'Cigna', 400, 'Approved', '2024-01-25');
 
 3️⃣ Calculate Claim Denial Rate
-sql
-Copy code
+
 SELECT 
     ROUND(
         SUM(CASE WHEN ClaimStatus = 'Denied' THEN 1 ELSE 0 END) * 100.0 / COUNT(*),
