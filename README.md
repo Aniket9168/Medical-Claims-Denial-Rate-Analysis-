@@ -44,6 +44,7 @@ CREATE TABLE Claims (
     ClaimStatus VARCHAR(20),
     ClaimDate DATE
 );
+
 2️⃣ Insert Data
 sql
 Copy code
@@ -53,6 +54,7 @@ INSERT INTO Claims VALUES
 (3, 'P003', 'Anthem', 300, 'Denied', '2024-01-15'),
 (4, 'P004', 'Aetna', 100, 'Approved', '2024-01-20'),
 (5, 'P005', 'Cigna', 400, 'Approved', '2024-01-25');
+
 3️⃣ Calculate Claim Denial Rate
 sql
 Copy code
