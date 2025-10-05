@@ -4,15 +4,15 @@ A simple SQL-based healthcare analytics project where I analyze medical claims d
 -Skills: SQL, CASE logic, Aggregate Functions, Healthcare Data Analysis  
 -Tools: PostgreSQL, Excel, GitHub  
 -Focus: Real-world healthcare metric — Denial Rate (% of denied claims)
-# 🏥 Medical Claims Denial Rate Analysis (SQL Project)
+#  Medical Claims Denial Rate Analysis (SQL Project)
 
-## 🎯 Project Objective
+##  Project Objective
 To analyze healthcare claim data and calculate the **Claim Denial Rate** — a key performance indicator (KPI) in healthcare analytics that shows what percentage of submitted claims are denied by insurance companies.  
 This project helps healthcare organizations identify billing inefficiencies and improve claim approval rates.
 
 ---
 
-## 📊 Dataset Overview
+##  Dataset Overview
 A small sample dataset of medical insurance claims.
 
 | Column Name | Description |
@@ -36,9 +36,9 @@ A small sample dataset of medical insurance claims.
 
 ---
 
-## 🧩 SQL Steps
+##  SQL Steps
 
-### 1️⃣ Create Table
+### 1️ Create Table
 
 CREATE TABLE Claims (
     ClaimID INT PRIMARY KEY,
@@ -49,7 +49,7 @@ CREATE TABLE Claims (
     ClaimDate DATE
 );
 
-2️⃣ Insert Data
+2️ Insert Data
 
 INSERT INTO Claims VALUES
 (1, 'P001', 'Aetna', 200, 'Approved', '2024-01-10'),
@@ -58,7 +58,7 @@ INSERT INTO Claims VALUES
 (4, 'P004', 'Aetna', 100, 'Approved', '2024-01-20'),
 (5, 'P005', 'Cigna', 400, 'Approved', '2024-01-25');
 
-3️⃣ Calculate Claim Denial Rate
+3️ Calculate Claim Denial Rate
 
 SELECT 
     ROUND(
