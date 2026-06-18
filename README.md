@@ -1,4 +1,4 @@
-# 🏥 Healthcare Claims Denial Rate Analysis
+<img width="1061" height="627" alt="CLAIM DENIAL DASHBOARD png1" src="https://github.com/user-attachments/assets/b618fde2-4f1d-4e9e-a0ca-5d149c723c55" /># 🏥 Healthcare Claims Denial Rate Analysis
 
 ### SQL | Excel | Power BI | Healthcare Analytics
 
@@ -8,7 +8,6 @@ End-to-end analysis of **10,000 healthcare insurance claims** to identify denial
 
 # 📸 Dashboard Preview
 
-> Upload your dashboard screenshot below
 
 <img width="1061" height="627" alt="CLAIM DENIAL DASHBOARD png1" src="https://github.com/user-attachments/assets/eda60227-0901-4fdf-ad6d-5c66063dfa2a" />
 
@@ -86,9 +85,9 @@ Healthcare claim denials create significant revenue loss for providers and payer
 
 Claims Data
 
-⬇️ SQL Analysis
+⬇️ Excel Data cleaning
 
-⬇️ Excel Validation
+⬇️ SQL Analysis
 
 ⬇️ Power BI Dashboard
 
@@ -185,8 +184,8 @@ Medical Coder (3+ Years at Optum) → Aspiring Healthcare Data Analyst
 
 Combining healthcare domain expertise with data analytics to improve operational and financial performance through data-driven decision-making.
 
-📧 Email: Your Email
+📧 Email: abmane103@gmail.com
 
-🔗 LinkedIn: Your LinkedIn Profile
+🔗 LinkedIn: www.linkedin.com/in/aniket-mane-51b421160
 
 🔗 GitHub: https://github.com/Aniket9168
