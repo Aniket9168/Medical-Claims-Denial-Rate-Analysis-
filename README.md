@@ -1,4 +1,4 @@
- 🏥 Healthcare Claims Denial Rate Analysis
+ #🏥 Healthcare Claims Denial Rate Analysis
 
 ### SQL | Excel | Power BI | Healthcare Analytics
 
