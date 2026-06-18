@@ -1,125 +1,192 @@
-# Healthcare Claims Denial Rate Analysis
-End-to-end analysis of 10,000 medical insurance claims (FY 2024) to identify the root causes of claim denials, quantify revenue at risk, and recommend operational fixes — built using SQL, Excel, and Power BI.
+# 🏥 Healthcare Claims Denial Rate Analysis
 
+### SQL | Excel | Power BI | Healthcare Analytics
 
-##  Project Overview
-Healthcare providers lose millions of dollars every year to denied claims — many of which are preventable. This project analyzes a 10,000-record claims dataset to answer four questions that matter to a revenue cycle / payer operations team:
+End-to-end analysis of **10,000 healthcare insurance claims** to identify denial drivers, quantify revenue at risk, and recommend strategies to improve reimbursement performance.
 
-
-What is our overall claim denial rate, and how does it compare to the industry benchmark?
-Which denial reasons are costing us the most money?
-Which payers, provider types, and diagnosis groups have the highest denial rates?
-What specific, actionable steps would reduce denials and recover revenue?
-
-
-The project moves through three layers of analysis: SQL for querying and aggregating raw claims data, Excel for data cleaning and pivot-based exploration, and Power BI for the final interactive dashboard.
-
-##Business problem
-
-
-A 29.6% denial rate (vs. an 11% national average reported by Crowe RCA benchmarking) means nearly $11.45M of $24.93M billed is at risk. The goal of this project is to pinpoint why claims are being denied and where to intervene first for the biggest impact.
 ---
 
-##  Dataset Overview
-A synthetic but realistic dataset of 10,000 medical claims spanning Jan 2023 – Dec 2024.
+# 📸 Dashboard Preview
 
-ColumnDescriptionClaim_IDUnique claim identifierPatient_IDUnique patient identifierDate_of_ServiceDate the service was providedSubmission_DateDate the claim was submitted to the payerDecision_DateDate the payer made a decisionPayerInsurance payer (Aetna, BCBS, Cigna, Medicaid, Medicare, etc.)Provider_TypeClinic, Hospital, Lab, Specialist, Primary Care, Imaging CenterDiagnosis_GroupClinical category (Cardiovascular, Respiratory, Oncology, etc.)Procedure_CodeCPT/procedure code billedClaim_AmountTotal amount billedPaid_AmountAmount reimbursed by payerClaim_StatusApproved / Denied / PendingDenial_ReasonReason code for denial (if applicable)Denial_flag1 = denied, 0 = not deniedProcessing DaysDays between submission and decisionDenied AmountDollar amount denied
+> Upload your dashboard screenshot below
 
-📁 Raw data: data/healthcare_claims_raw.xlsx
-
-
-Tools & skills used
-
-ToolPurposeSQL (PostgreSQL)Denial rate calculations, CASE logic, GROUP BY aggregations, window functionsExcelData cleaning, pivot tables, VLOOKUP/INDEX-MATCH cross-checksPower BIInteractive dashboard — KPIs, donut/bar charts, drill-through, slicersHealthcare domain knowledgeICD-10 / CPT / HCPCS context, denial reason categorization, RCM workflows
+<img width="1061" height="627" alt="CLAIM DENIAL DASHBOARD png1" src="https://github.com/user-attachments/assets/eda60227-0901-4fdf-ad6d-5c66063dfa2a" />
 
 
-Dashboard
+---
 
-The dashboard surfaces four core KPIs and six supporting visuals so a revenue cycle manager can go from "what's wrong" to "what to fix" in one view.
+# 📌 Project Overview
 
-Key KPIs
+Healthcare claim denials create significant revenue loss for providers and payers. This project analyzes claim-level data to identify the root causes of denials, evaluate payer and provider performance, and recommend actions to reduce denials.
 
+---
 
-Denial Rate: 29.6% (vs. 11% industry benchmark)
-Revenue at Risk: $11.45M (of $24.93M total billed)
-Approved Claims: 6,211 (62.1% approval rate)
-Avg Processing Days: 32.2
+# ❓ Business Questions Solved
 
+✔ What is the overall claim denial rate?
 
-Visuals
+✔ How much revenue is at risk due to denied claims?
 
+✔ Which denial reasons drive the most denials?
 
-Claim status breakdown (donut chart)
-Top 10 denial reasons (horizontal bar)
-Denial rate by diagnosis group
-Denial rate by provider type
-Payer performance table with risk tiers
-Monthly denial trend
+✔ Which payers have the highest denial rates?
 
+✔ Which diagnosis groups have the highest denial rates?
 
-📁 Screenshot: dashboard/screenshots/dashboard_overview.png
+✔ Which provider types contribute most to denials?
 
+✔ What actions can reduce denials and improve revenue recovery?
 
-Key insights
+---
 
+# 📊 Key Results
 
-Wrong Procedure Code (819) + Incorrect Modifier (63) = 882 denials (~30% of all denials) — these are coding-level errors that a pre-submission claim scrubber could catch before the claim ever leaves the building.
-Missing Prior Authorization accounts for 774 denials (26%) — the single largest category after coding errors, concentrated in Respiratory, Dermatology, and Mental Health services.
-Cigna (32.2%) and Humana (31.2%) have the highest payer-level denial rates — both roughly 3 points above the portfolio average.
-Respiratory (32.0%) and Dermatology (31.9%) diagnosis groups consistently see the highest denial rates, suggesting documentation or coding gaps specific to these specialties.
-Clinics (30.9%) and Primary Care (30.3%) have the highest denial rates by provider type — likely candidates for targeted billing-team training.
+| Metric                  | Value   |
+| ----------------------- | ------- |
+| Total Claims            | 10,000  |
+| Denial Rate             | 29.6%   |
+| Industry Benchmark      | 11.0%   |
+| Revenue at Risk         | $11.45M |
+| Total Amount Billed     | $24.93M |
+| Approved Claims         | 6,211   |
+| Average Processing Days | 32.2    |
 
+---
 
+# 🛠️ Tools & Skills Used
 
-SQL analysis
+### SQL
 
-All queries are in sql/:
+* Joins
+* Aggregations
+* CASE Statements
+* Window Functions
+* KPI Calculations
 
+### Excel
 
-01_create_table.sql — schema definition for the claims table
-02_denial_rate_analysis.sql — denial rate, denial reason breakdown, payer/provider/diagnosis-level analysis, monthly trends, and revenue-at-risk calculations
+* Data Cleaning
+* Pivot Tables
+* Pivot Charts
+* VLOOKUP
+* INDEX-MATCH
+* Conditional Formatting
 
+### Power BI
 
-Example — overall denial rate:
+* Data Modeling
+* DAX Measures
+* KPI Cards
+* Interactive Dashboard
+* Slicers & Filters
 
-sqlSELECT
-    ROUND(SUM(denial_flag) * 100.0 / COUNT(*), 2) AS denial_rate_percent,
-    SUM(denial_flag) AS denied_claims,
-    COUNT(*) AS total_claims
-FROM healthcare_claims;
+---
 
+# 🔄 Project Workflow
 
-Recommendations
+Claims Data
 
-PriorityRecommendationExpected impact1Implement pre-submission code validation / claim scrubbingReduces ~882 coding-error denials2Automate prior-authorization triggers at scheduling for Respiratory, Dermatology, Mental HealthReduces ~774 PA-related denials3Run quarterly denial reviews with Cigna and Humana provider relations teamsTargets the 2 highest-denial payers4Targeted billing training for Clinics and Primary Care staffAddresses highest denial rates by provider type
+⬇️ SQL Analysis
 
+⬇️ Excel Validation
 
-Repository structure
+⬇️ Power BI Dashboard
 
-Medical-Claims-Denial-Rate-Analysis/
+⬇️ Insights & Recommendations
+
+---
+
+# 💡 Key Insights
+
+### 1. Coding Errors Are the Largest Denial Driver
+
+* Wrong Procedure Code: 819 denials
+* Incorrect Modifier: 63 denials
+
+Combined coding issues account for nearly **30% of all denials**.
+
+### 2. Prior Authorization Is a Major Issue
+
+* Missing Prior Authorization: 774 denials
+
+Most common in:
+
+* Respiratory
+* Dermatology
+* Mental Health
+
+### 3. Highest Denial Rate Payers
+
+| Payer  | Denial Rate |
+| ------ | ----------- |
+| Cigna  | 32.2%       |
+| Humana | 31.2%       |
+
+### 4. Highest Risk Diagnosis Groups
+
+* Respiratory (32.0%)
+* Dermatology (31.9%)
+
+### 5. Highest Risk Provider Types
+
+* Clinics (30.9%)
+* Primary Care (30.3%)
+
+---
+
+# ✅ Recommendations
+
+1. Implement claim scrubbing before submission.
+2. Automate prior authorization workflows.
+3. Conduct payer review meetings with Cigna and Humana.
+4. Provide targeted billing training for Clinics and Primary Care providers.
+
+---
+
+# 🚀 Business Impact
+
+✔ Analyzed 10,000 healthcare claims
+
+✔ Identified $11.45M revenue at risk
+
+✔ Built an interactive Power BI dashboard
+
+✔ Uncovered major denial drivers
+
+✔ Delivered actionable denial reduction strategies
+
+---
+
+# 📂 Repository Structure
+
+```text
+Medical-Claims-Denial-Rate-Analysis
+│
 ├── README.md
-├── data/
-│   └── healthcare_claims_raw.xlsx
-├── sql/
-│   ├── 01_create_table.sql
-│   └── 02_denial_rate_analysis.sql
-├── dashboard/
+├── data
+├── sql
+├── dashboard
 │   ├── Claims_Denial_Dashboard.pbix
-│   └── screenshots/
-│       └── dashboard_overview.png
-└── docs/
-    └── insights_summary.md
+│   └── screenshots
+└── docs
+```
 
+---
 
-About me
+# 👨‍💻 About Me
 
-Aniket Mane
-Medical Coder (3+ years, Optum) → Healthcare Data Analyst | CCS Certified (AHIMA) | MBA in Business Analytics
+**Aniket Mane**
 
-Combining hands-on US healthcare RCM experience (ICD-10, CPT, HCPCS, claims adjudication) with SQL, Excel, and Power BI to turn claims data into operational decisions.
+Medical Coder (3+ Years at Optum) → Aspiring Healthcare Data Analyst
 
-📫 Connect with me on LinkedIn
+**Skills:** SQL • Excel • Power BI • Healthcare Analytics • Revenue Cycle Management
 
+**Certifications:** CCS (AHIMA)
 
+Combining healthcare domain expertise with data analytics to improve operational and financial performance through data-driven decision-making.
 
+📧 Email: Your Email
 
+🔗 LinkedIn: Your LinkedIn Profile
+
+🔗 GitHub: https://github.com/Aniket9168
