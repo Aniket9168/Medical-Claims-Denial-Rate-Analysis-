@@ -1,4 +1,4 @@
-<img width="1061" height="627" alt="CLAIM DENIAL DASHBOARD png1" src="https://github.com/user-attachments/assets/b618fde2-4f1d-4e9e-a0ca-5d149c723c55" /># 🏥 Healthcare Claims Denial Rate Analysis
+ 🏥 Healthcare Claims Denial Rate Analysis
 
 ### SQL | Excel | Power BI | Healthcare Analytics
 
