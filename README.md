@@ -8,8 +8,9 @@ End-to-end analysis of **10,000 healthcare insurance claims** to identify denial
 
 # 📸 Dashboard Preview
 
+<img width="1037" height="597" alt="image" src="https://github.com/user-attachments/assets/57950c99-3223-44f2-ade7-9559f73eebea" />
 
-<img width="1061" height="627" alt="CLAIM DENIAL DASHBOARD png1" src="https://github.com/user-attachments/assets/eda60227-0901-4fdf-ad6d-5c66063dfa2a" />
+
 
 
 ---
